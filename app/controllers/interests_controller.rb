@@ -7,10 +7,14 @@ class InterestsController < ApplicationController
     @interest = Interest.new(interest_params)
 
     if @interest.save
-      redirect_to root_path
+      redirect_to interest_path(@interest.id)
     else
       render 'new'
     end
+  end
+
+  def show
+    @interest = Interest.find(params[:id])
   end
 
   private

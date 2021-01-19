@@ -1,25 +1,14 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <%= image_tag("TM-logo.gif") %>
-    </a>
-
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-
-      <a class="navbar-item">
-        <div class="subtitle">
-          <h3>about</h3>
-        </div>
-      </a>
-    </div>
-  </div>
-</nav> 
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/"><%= image_tag("TM-logo.gif") %></a>
+  <form class="form-inline">
+    <% if current_page?(root_path) %> 
+      <div>
+        <%= link_to('Register Interest', new_interest_path, :class => 'btn btn-large btn-primary') %>
+      </div>
+    <% else %> 
+      <div>
+        <%= link_to('About Us', root_path, :class => 'btn btn-large btn-primary') %>
+      </div>
+    <% end %>
+  </form>
+</nav>
