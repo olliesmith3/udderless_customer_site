@@ -10,7 +10,7 @@ This project is made up of two parts:
 
 ### Requirements 
 
-  - Staff site
+  - [Staff Site - Click Here](https://github.com/olliesmith3/udderless)
       - Log in to website as staff (authenticated)
       - Connect to a database and store customer data and order data.
       - Search for customers and orders.
