@@ -21,3 +21,7 @@ This project is made up of two parts:
       - If a customer is not withing the postcode range then allow them to register interest.
       - Send confirmation emails.
       - Accessible to blind and deaf.
+
+### Adding a react front end
+
+- One part of this involved adding axios, a library that allows you to make API requests. This will help to turn the app into two apps, a rails API with a React front end
