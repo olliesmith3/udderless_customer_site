@@ -24,7 +24,6 @@ const InterestsBody = props => {
         }
       }
     ))
-    .then(res=>( console.log(res)))
     .catch( error => console.log(error))
     setInterests([...interests, interest]);
   };
@@ -38,15 +37,15 @@ const InterestsBody = props => {
 
   return (
     <div>
-      <div>
-        <NewInterestForm addInterest={addInterest} initialFormState={initialFormState} />
-      </div>
       <div className="interests-list">
         {interests.map((interest, index) => (
             <div key={index}>
               {interest.first_name} | {interest.postcode} | {interest.email} | {interest.tel}
             </div>
           ))}
+      </div>
+      <div>
+        <NewInterestForm addInterest={addInterest} initialFormState={initialFormState} />
       </div>
     </div>
   )
