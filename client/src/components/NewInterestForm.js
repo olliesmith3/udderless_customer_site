@@ -11,7 +11,7 @@ const NewInterestForm = props => {
 
 
   return (
-    <div alt="interest form">
+    <div>
       <form className="interest-form" onSubmit={event => {
         event.preventDefault()
         if ((!interest.first_name || !interest.postcode) || (!interest.email && !interest.tel)) return;
