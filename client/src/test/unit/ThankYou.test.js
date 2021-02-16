@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ThankYou from '../components/ThankYou';
+import ThankYou from '../../components/ThankYou';
 
 test('renders positive thank you message for a given name and postcode', () => {
   render(<ThankYou lastInterest={interestOne}/>);

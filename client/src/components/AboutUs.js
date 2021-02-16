@@ -6,7 +6,7 @@ const AboutUs = props => {
   return (
     <div className="about-us">
       About Us
-      <div className="description">
+      <div data-testid="description">
         <p>
           Delivered directly to your door, our signature oat blend is versatile, sustainable and delicious. 
         </p>

@@ -24,21 +24,25 @@ const UdderlessBar = props => {
   };
 
   return (
-    <div className="NavBar">
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand ><img src={Udderless1} alt="udderless-1" className="udderless-brand" /></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-          </Nav>
-          <Nav >
-            {showAboutUs && <Nav.Link className="interest-link" onClick={handleClickRegInt}>Register Interest</Nav.Link>}
-            {showInterestsBody && <Nav.Link className="about-link" onClick={handleClickAboutUs}>About Us</Nav.Link>}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      { showInterestsBody && <InterestsBody />}
-      { showAboutUs && <AboutUs />}
+    <div>
+      <div className="NavBar">
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand ><img src={Udderless1} alt="udderless-1" className="udderless-brand" /></Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+            </Nav>
+            <Nav >
+              {showAboutUs && <Nav.Link className="interest-link" onClick={handleClickRegInt}>Register Interest</Nav.Link>}
+              {showInterestsBody && <Nav.Link className="about-link" onClick={handleClickAboutUs}>About Us</Nav.Link>}
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+      <div>
+        { showInterestsBody && <InterestsBody />}
+        { showAboutUs && <AboutUs />}
+      </div>
     </div>
   )
 }
