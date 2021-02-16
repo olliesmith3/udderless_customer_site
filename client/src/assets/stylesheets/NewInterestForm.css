@@ -1,0 +1,18 @@
+label {
+  font-size: 22px;
+  text-align: right;
+  float: left;
+}
+
+input {
+  float:right;
+  height: 30px;
+  width: 50%;
+}
+
+.interest-form {
+  margin-top: 10%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%
+}

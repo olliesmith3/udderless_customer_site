@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NewInterestForm from './NewInterestForm';
+import ThankYou from './ThankYou';
+import Udderless1 from '../assets/images/TM-logo-final-1.gif'
+import '../assets/stylesheets/InterestsBody.css';
 
 const InterestsBody = props => {
 
@@ -26,6 +29,7 @@ const InterestsBody = props => {
     ))
     .catch( error => console.log(error))
     setInterests([...interests, interest]);
+    setFormSubmitted(true);
   };
 
   useEffect(() => {
@@ -34,18 +38,16 @@ const InterestsBody = props => {
       }, []);
 
   const [interests, setInterests] = useState([]);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
     <div>
-      <div className="interests-list">
-        {interests.map((interest, index) => (
-            <div key={index}>
-              {interest.first_name} | {interest.postcode} | {interest.email} | {interest.tel}
-            </div>
-          ))}
+      <div>
+        {!formSubmitted && <NewInterestForm addInterest={addInterest} initialFormState={initialFormState} />}
+        {formSubmitted && <ThankYou lastInterest={interests[interests.length - 1]} />}
       </div>
       <div>
-        <NewInterestForm addInterest={addInterest} initialFormState={initialFormState} />
+        <img src={Udderless1} alt="udderless-logo" className="udderless-logo" />
       </div>
     </div>
   )

@@ -1,0 +1,11 @@
+.about-us {
+  margin: 0 auto;
+  margin-top: 5%;
+  width: 60%;
+}
+
+.description {
+  width: 200px;
+  font-family: 'Lato-Regular', sans-serif;
+  font-size: 15px;
+}

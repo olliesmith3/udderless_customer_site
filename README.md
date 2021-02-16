@@ -25,3 +25,7 @@ This project is made up of two parts:
 ### Adding a react front end
 
 - One part of this involved adding axios, a library that allows you to make API requests. This will help to turn the app into two apps, a rails API with a React front end
+
+### Current issues
+
+- authorisation of interests - to avoid multiple sign ups from the same customer need to check database that email or tel hasnt been registered before.

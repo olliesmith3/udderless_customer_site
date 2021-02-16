@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import InterestsBody from './InterestsBody';
 import AboutUs from './AboutUs';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
-import FormControl from 'react-bootstrap/FormControl';
+import '../assets/stylesheets/UdderlessBar.css';
+import Udderless1 from '../assets/images/Udderless1.png'
+
 
 
 const UdderlessBar = props => {
@@ -14,17 +13,27 @@ const UdderlessBar = props => {
   const [showInterestsBody, setShowInterestsBody] = useState(false)
   const [showAboutUs, setShowAboutUs] = useState(true)
 
+  const handleClickAboutUs = () => {
+    setShowAboutUs(true)
+    setShowInterestsBody(false)
+  };
+
+  const handleClickRegInt = () => {
+    setShowAboutUs(false)
+    setShowInterestsBody(true)
+  };
+
   return (
-    <div>
+    <div className="NavBar">
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand>Udderless</Navbar.Brand>
+        <Navbar.Brand ><img src={Udderless1} alt="udderless-1" className="udderless-brand" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
           </Nav>
           <Nav >
-          <Nav.Link onClick={() => setShowInterestsBody(!showInterestsBody)}>Register Interest</Nav.Link>
-            <Nav.Link onClick={() => setShowAboutUs(!showAboutUs)}>About Us</Nav.Link>
+            {showAboutUs && <Nav.Link className="interest-link" onClick={handleClickRegInt}>Register Interest</Nav.Link>}
+            {showInterestsBody && <Nav.Link className="about-link" onClick={handleClickAboutUs}>About Us</Nav.Link>}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
