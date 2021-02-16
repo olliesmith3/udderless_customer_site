@@ -17,6 +17,14 @@ test('renders negative thank you message for a given name and postcode that is o
   expect(secondMessage).toBeInTheDocument();
 });
 
+test('renders positive thank you message for lowercase postcode', () => {
+  render(<ThankYou lastInterest={interestThree}/>);
+  const firstMessage = screen.getByText('Thank you for registering your interest, Ollie.');
+  const secondMessage = screen.getByText('We already plan to deliver to this postcode. We will be in contact when we launch Udderless.');
+  expect(firstMessage).toBeInTheDocument();
+  expect(secondMessage).toBeInTheDocument();
+});
+
 const interestOne = {
   email: "ollie@ollie.com",
   first_name: "Ollie",
@@ -28,5 +36,12 @@ const interestTwo = {
   email: "ollie@ollie.com",
   first_name: "Ollie",
   postcode: "RH5 5JJ",
+  tel: "0123455677"
+}
+
+const interestThree = {
+  email: "ollie@ollie.com",
+  first_name: "Ollie",
+  postcode: "sw11 5JJ",
   tel: "0123455677"
 }
