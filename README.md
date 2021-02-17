@@ -84,3 +84,6 @@ yarn test
 
 - Completing ARIA labels and making accessible for screen readers
 
+- Deployment - Previously I have used Google cloud and Heroku
+
+- Get started with version 2!
