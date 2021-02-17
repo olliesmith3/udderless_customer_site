@@ -1,12 +1,13 @@
 label {
-  font-size: 22px;
+  font-size: 28px;
   text-align: right;
   float: left;
+  clear: left;
 }
 
 input {
   float:right;
-  height: 30px;
+  height: 40px;
   width: 50%;
 }
 
@@ -15,4 +16,12 @@ input {
   margin-right: auto;
   margin-left: auto;
   width: 60%
+}
+
+.submit-button {
+  float: right;
+  clear: right;
+  margin-top: 10px;
+  width: 50%;
+  font-size: 28px;
 }

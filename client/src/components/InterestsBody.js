@@ -46,8 +46,8 @@ const InterestsBody = props => {
         {!formSubmitted && <NewInterestForm addInterest={addInterest} initialFormState={initialFormState} />}
         {formSubmitted && <ThankYou lastInterest={interests[interests.length - 1]} />}
       </div>
-      <div>
-        <img src={Udderless1} alt="udderless-logo" className="udderless-logo" />
+      <div className="logo-div">
+        <img src={Udderless1} alt="udderless-logo" className="udderless-logo"/>
       </div>
     </div>
   )

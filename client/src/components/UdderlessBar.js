@@ -4,7 +4,7 @@ import AboutUs from './AboutUs';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import '../assets/stylesheets/UdderlessBar.css';
-import Udderless1 from '../assets/images/Udderless1.png'
+import Udderless1 from '../assets/images/Udderless1.png';
 
 
 

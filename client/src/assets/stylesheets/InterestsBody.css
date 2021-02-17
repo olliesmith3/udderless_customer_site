@@ -1,6 +1,8 @@
 .udderless-logo {
+  bottom: -200px;
   width:100%;
-  max-width:100px;
-  margin-right: auto;
-  margin-left: auto;
+  max-width:220px;
+  display: block;
+  margin: 0 auto;
 }
+

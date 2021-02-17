@@ -5,8 +5,8 @@ test('When the app is rendered the about us page shows but not the register inte
   render(<UdderlessBar />);
   const aboutContent = screen.getByTestId('description');
   expect(aboutContent).toBeInTheDocument();
-  const interestForm = screen.queryByRole('form', {name: 'interest form'});
-  expect(interestForm).toBeNull();
+  const interestForm = screen.queryByLabelText('First Name');
+  expect(interestForm).not.toBeInTheDocument();
 });
 
 test('Renders the Navbar with image and link to Register Interest', () => {
@@ -16,5 +16,5 @@ test('Renders the Navbar with image and link to Register Interest', () => {
   const registerInterestLink = screen.getByRole('button', {name: 'Register Interest'});
   expect(registerInterestLink).toBeInTheDocument();
   const AboutUsLink = screen.queryByRole('button', {name: 'About Us'});
-  expect(AboutUsLink).toBeNull();
+  expect(AboutUsLink).not.toBeInTheDocument();
 });
