@@ -17,24 +17,25 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test('user attempts to register interest without filling in first name', async () => {
+test('user registers interest and postcode is out of range', () => {
   render(<UdderlessBar />);
   fireEvent.click(screen.getByRole('button', {name: 'Register Interest'}))
 
-  const firstNameField = await screen.findByLabelText(/first name/i);
+  const firstNameField = screen.getByLabelText(/first name/i);
   const postcodeField = screen.getByLabelText(/postcode/i);
   const emailField = screen.getByLabelText(/email address/i);
   const telField = screen.getByLabelText(/telephone number/i);
 
-  fireEvent.change(firstNameField, { target: { value: 'asdeasd' } });
-  fireEvent.change(postcodeField, { target: { value: 'sw9 5jj' } });
+  fireEvent.change(firstNameField, { target: { value: 'Ollie' } });
+  fireEvent.change(postcodeField, { target: { value: 'RH5 5jj' } });
   fireEvent.change(emailField, { target: { value: 'ollie@ollie.com' } });
   fireEvent.change(telField, { target: { value: '01234567890' } });
 
   const submitButton = screen.getByRole("button", {name: "I'm Interested!"});
   fireEvent.click(submitButton)
 
-  const firstMessage = screen.queryByText('Thank you for registering your interest, Ollie.');
-  expect(firstMessage).not.toBeInTheDocument();
-  expect(postcodeField).toHaveTextContent("");
+  const firstMessage = screen.getByText('Thank you for registering your interest, Ollie.');
+  const secondMessage = screen.getByText('We do not currently plan to deliver to this postcode. If more interest for this postcode is shown then it will be added to our range.');
+  expect(firstMessage).toBeInTheDocument();
+  expect(secondMessage).toBeInTheDocument();
 });

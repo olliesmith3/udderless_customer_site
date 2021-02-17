@@ -17,25 +17,20 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test('user registers interest and postcode is in range', () => {
+test('user does not enter email or tel and form is not submitted', () => {
   render(<UdderlessBar />);
   fireEvent.click(screen.getByRole('button', {name: 'Register Interest'}))
 
   const firstNameField = screen.getByLabelText(/first name/i);
   const postcodeField = screen.getByLabelText(/postcode/i);
-  const emailField = screen.getByLabelText(/email address/i);
-  const telField = screen.getByLabelText(/telephone number/i);
 
   fireEvent.change(firstNameField, { target: { value: 'Ollie' } });
   fireEvent.change(postcodeField, { target: { value: 'sw9 5jj' } });
-  fireEvent.change(emailField, { target: { value: 'ollie@ollie.com' } });
-  fireEvent.change(telField, { target: { value: '01234567890' } });
 
   const submitButton = screen.getByRole("button", {name: "I'm Interested!"});
   fireEvent.click(submitButton)
 
-  const firstMessage = screen.getByText('Thank you for registering your interest, Ollie.');
-  const secondMessage = screen.getByText('We already plan to deliver to this postcode. We will be in contact when we launch Udderless.');
-  expect(firstMessage).toBeInTheDocument();
-  expect(secondMessage).toBeInTheDocument();
+  const thankYouMessage = screen.queryByLabelText('Thank you for registering your interest, Ollie.');
+  expect(thankYouMessage).not.toBeInTheDocument();
+  expect(postcodeField).toBeInTheDocument();
 });
