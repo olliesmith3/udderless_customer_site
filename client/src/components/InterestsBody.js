@@ -32,11 +32,6 @@ const InterestsBody = props => {
     setFormSubmitted(true);
   };
 
-  useEffect(() => {
-    axios.get('/api/v1/interests.json')
-        .then(res => setInterests(res.data))
-      }, []);
-
   const [interests, setInterests] = useState([]);
   const [formSubmitted, setFormSubmitted] = useState(false);
 

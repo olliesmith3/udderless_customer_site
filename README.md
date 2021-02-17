@@ -1,7 +1,5 @@
 ### Udderless
-
-![HomePage](./public/README-images/homepage.png?raw=true "Home Page")
-
+![Logo](./client/src/assets/images/TM-logo-final-1.gif?raw=true "Logo")
 ### What is udderless?
 
 Udderless is a new company that produces and delivers organic oat milk to customers in SW London.
@@ -21,7 +19,7 @@ This project is made up of two parts:
   - Customer site
     - v1
         - A place for customers to visit, learn a about the company and register their interest.
-    - v2
+    - v2 - After launch
         - Allow customers to manage their orders.
         - If a customer is not within the postcode range then allow them to register interest.
         - Send confirmation emails.
@@ -36,9 +34,47 @@ This project is made up of two parts:
 
 - One part of this involved adding axios, a library that allows you to make API requests.
 
+- React testing library - ability to write both unit tests and integration tests with one technology.
+
 - Rails API and Postgres database
     - Already understand these technologies so will avoid having too many moving parts.
 
-### Current issues
+### How to use
 
-- authorisation of interests - to avoid multiple sign ups from the same customer need to check database that email or tel hasnt been registered before.
+Clone this repository and install the dependencies by running bundle and yarn.
+```
+bundle install
+cd client 
+yarn
+```
+Set up the database:
+```
+rails db:setup
+rails db:migrate
+```
+Start the server and the client on seperate ports. in the first terminal:
+```
+rails s -p 3001
+```
+And in a new terminal:
+```
+cd client
+yarn start
+```
+Now open up localhost:3000 in your browser and begin using the customer portal v1:
+
+![HomePage](./public/README-images/homepage.png?raw=true "Home Page")
+This page is simply for customers to learn a bit more about the company
+
+![Register Interest Form](./public/README-images/register-interest-form.png?raw=true "Register Interest Form")
+This form is where potential customers can register their interest. First name and postcode are compulsory fields whereas it is only compulsory for one of either email or telephone to be filled.
+
+![Thank You Message](./public/README-images/thank-you-message.png?raw=true "Thank You Message")
+The thank you message presented is tailored to the customer's name and postcode.
+
+### What I will be working on next
+
+- Authorisation of interests - to avoid multiple sign ups from the same customer need to check database that email or tel hasnt been registered before.
+
+- Completing ARIA labels and making accessible for screen readers
+
