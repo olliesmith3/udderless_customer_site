@@ -16,7 +16,7 @@ const ThankYou = props => {
   };
 
   return (
-    <div>
+    <div className="thank-you">
       <div id="thank-you-1">
         Thank you for registering your interest, {props.lastInterest.first_name}.
       </div><br />

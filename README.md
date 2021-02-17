@@ -1,5 +1,7 @@
 ### Udderless
 
+![HomePage](./public/README-images/homepage.png?raw=true "Home Page")
+
 ### What is udderless?
 
 Udderless is a new company that produces and delivers organic oat milk to customers in SW London.
