@@ -19,14 +19,25 @@ This project is made up of two parts:
       - print off an order form for each delivery day.
       
   - Customer site
-      - Allow customers to manage their orders.
-      - If a customer is not withing the postcode range then allow them to register interest.
-      - Send confirmation emails.
-      - Accessible to blind and deaf.
+    - v1
+        - A place for customers to visit, learn a about the company and register their interest.
+    - v2
+        - Allow customers to manage their orders.
+        - If a customer is not within the postcode range then allow them to register interest.
+        - Send confirmation emails.
+        - Accessible for screen readers.
 
-### Adding a react front end
+### Choosing a tech stack
 
-- One part of this involved adding axios, a library that allows you to make API requests. This will help to turn the app into two apps, a rails API with a React front end
+- I wanted to use a React frontend for this project
+    - Give me a better understanding of api requests
+    - Very popular framework which is important to learn
+    - Possibility of adding a React Native client for running on mobile devices naitvely.
+
+- One part of this involved adding axios, a library that allows you to make API requests.
+
+- Rails API and Postgres database
+    - Already understand these technologies so will avoid having too many moving parts.
 
 ### Current issues
 
