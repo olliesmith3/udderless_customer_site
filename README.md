@@ -72,6 +72,12 @@ This form is where potential customers can register their interest. First name a
 ![Thank You Message](./public/README-images/thank-you-message.png?raw=true "Thank You Message")
 The thank you message presented is tailored to the customer's name and postcode.
 
+In order to run the tests:
+```
+rails test
+cd client
+yarn test
+```
 ### What I will be working on next
 
 - Authorisation of interests - to avoid multiple sign ups from the same customer need to check database that email or tel hasnt been registered before.
